@@ -1,0 +1,16 @@
+<h1>Welcome to Flashcards!</h1>
+
+<div class="container">
+  <form id='deck' action='/create_deck' method='post'>
+    <input type='text' name='name'>
+    <textarea rows='4' cols='50' name='description'></textarea>
+    <input type='submit' value='Submit Deck'>
+  </form>
+
+  <form id='card' action='/create_card' method='post'>
+    <input type='text' name='side_one'>
+    <input type='text' name='side_two'>
+    <input type='submit' value='Add Card'>
+  </form>
+
+</div>

@@ -3,7 +3,9 @@ helpers do
   # Replace with code that works with your application
   def current_user
     if session[:user_id]
-      @current_user ||= User.find_by_id(session[:user_id])
+      return current_user ||= User.find_by_id(session[:user_id])
+    else
+      return nil
     end
   end
 
@@ -20,12 +22,13 @@ helpers do
   end
 
   def auth(user, params)
-    if user.password == params[:password_hash]
+    if !user.nil? && user.password == params[:password_hash]
       session[:user_id] = user.id
       session[:username] = user.username
+      puts '============ something ============='
       redirect '/'
     else
-      'invalid password'
+      return nil
     end
   end
 end

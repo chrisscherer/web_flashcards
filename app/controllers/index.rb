@@ -17,7 +17,22 @@ post '/sign_up' do
 end
 
 post '/login' do
-  if current_user
-    auth(current_user, params)
-  end
+  user = User.find_by(username: params[:username])
+  auth(user, params) # redirects to '/'
+end
+
+get '/sign_out' do
+  session.clear
+  redirect '/'
+end
+
+get '/create_deck' do
+  erb :create_deck
+end
+
+post '/create_deck' do
+  redirect '/'
+end
+
+post '/create_card' do
 end
