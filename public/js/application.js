@@ -1,22 +1,31 @@
 $(document).ready(function() {
-  var cardArray = []
-  $('#card').on('submit', function(event) {
-    event.preventDefault();
+  // var cardArray = []
+  
+  // $('#deck_button').hide();
 
-    that = $(this).serialize();
+  // $('#card').on('submit', function(event) {
+  //   event.preventDefault();
 
-    cardArray.push(that);
-    
-    document.getElementById("card").reset();
-  })
+  //   card_information = $(this).serialize();
+  //   console.log(card_information);
 
-  $('#deck').on('submit', function(event) {
-    event.preventDefault();
+  //   cardArray.push(card_information);
 
-    var url = $(this).attr('href');
-    $.post(url, that, function(serverResponse, status, request){
-      
-    })
+  //   document.getElementById("card").reset();
+  
+  //   $('#deck_button').show();
+  // })
 
-  })
+  // $('#deck').on('submit', function(event) {
+  //   event.preventDefault();
+
+  //   info_to_send = {}
+
+  //   info_to_send.card_information = card_information;
+  //   info_to_send.deck_information = $(this).serialize();
+
+  //   var url = $(this).attr('href');
+  //   $.post('/create_deck', info_to_send, function(serverResponse, status, request){
+  //   })
+  // })
 });

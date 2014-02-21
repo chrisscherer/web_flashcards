@@ -1,0 +1,10 @@
+<div class='container'>
+  <h3>Game Play</h3>
+  <p> <%= @card.side_one %> </p>
+  <form action="/decks/<%= params[:id] %>" method='post'>
+    <input type='hidden' name="current_card" value='<%=@card.side_two %>'>
+    <input type='text' name="guess">
+    <input type='submit' value='Guess'>
+  </form>
+  <p> <%= session[:last_answer] %></p>
+</div>
