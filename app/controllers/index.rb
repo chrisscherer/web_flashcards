@@ -22,7 +22,7 @@ get '/' do
   erb :index
 end
 
-get '/sign_up' do 
+get '/sign_up' do
   erb :sign_up
 end
 
@@ -52,7 +52,7 @@ end
 post '/create_deck' do
   current_user.decks.create(name: params[:name],
                             description: params[:description])
-  redirect '/create_cards'
+  # redirect '/create_cards'
 end
 
 post '/create_cards' do
@@ -73,7 +73,7 @@ end
 post '/decks/:id' do
   if params[:guess] == params[:current_card]
     session[:last_answer] = "You're awesome"
-  else 
+  else
     session[:last_answer] = ["You truly suck", "You really suck", "How can someone be that awful", "Really?", "Wow. No. Sucker", "Just quit now.", "Uninstall life.", "Please don't breed.", "RM-F life", "You need to stop", "No.", "Not even close", "Awful.", "Please stop"].sample
   end
   redirect "/decks/#{params[:id]}"

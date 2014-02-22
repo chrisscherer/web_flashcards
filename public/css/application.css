@@ -4,6 +4,19 @@
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+
+.nav-bar {
+  position: relative;
+}
+
+.nav-bar ul {
+  list-style: none;
+}
+
+.all-decks {
+  position: relative;
+}
+
 th {
   text-align: left;
 }
