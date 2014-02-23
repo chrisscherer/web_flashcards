@@ -1,8 +1,8 @@
-<div class='container'>
-  <form id='card' action='/create_cards' method='post'>
-    <input type='text' name='side_one' placeholder='Card Side One'>
-    <input type='text' name='side_two' placeholder='Card Side Two'>
-    <input type='submit' value='Add Card'>
+<div class='card'>
+  <form id='create-card' action='/create_cards' method='post'>
+    <input id='side-one' type='text' name='side_one' placeholder='Card Side One'>
+    <input id='side-two' type='text' name='side_two' placeholder='Card Side Two'>
+    <input id='submit-card' type='submit' value='Add Card'>
   </form>
-  <a href='/'>Finish Deck</a>
+  <a id='finish-deck' href='/'>Finish Deck</a>
 </div>

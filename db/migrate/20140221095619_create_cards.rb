@@ -5,7 +5,7 @@ class CreateCards < ActiveRecord::Migration
       t.string :side_one
       t.string :side_two
 
-      t.string :timestamps
+      t.timestamps
     end
   end
 end
