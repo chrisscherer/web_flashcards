@@ -73,7 +73,6 @@ $(document).ready(function() {
       $('#side-one').val('');
       $('#side-two').val('');
     });
-
   });
 
   $('#finish-deck').on('click', function(event) {
@@ -88,10 +87,10 @@ $(document).ready(function() {
     })
   });
 
+  $('#guess-sub').on('submit', function(event) {
+    event.preventDefault();
+    // Trigger card flip
+    // Trigger feedback
+  });
 });
-
-
-
-
-
 

@@ -64,8 +64,8 @@ post '/create_cards' do
 end
 
 get '/decks/:id' do
-  current_deck = Deck.find(params[:id])
-  @card = current_deck.cards.sample()
+  @current_deck = Deck.find(params[:id])
+  @card = @current_deck.cards.sample()
 
   erb :play_deck
 end
