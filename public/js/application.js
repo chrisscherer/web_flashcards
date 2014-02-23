@@ -84,7 +84,7 @@ $(document).ready(function() {
       $('#card-table').hide();
       $('.card').remove();
       $('#create-deck').show();
-      // location.reload(); // NEED TO FIGURE OUT WHY MULTIPLE DECK FORMS ARE SHOWING UP
+      location.reload(); // NEED TO FIGURE OUT WHY MULTIPLE DECK FORMS ARE SHOWING UP
     })
   });
 
