@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var counter = 0;
   // var cardArray = []
 
   // $('#deck_button').hide();
@@ -38,13 +39,14 @@ $(document).ready(function() {
 
     $.get(url, function(serverResponse, status, request) {
       $('.container').append(serverResponse);
+      // Redirect window thing
     });
   });
 
   $('#create-deck').on('click', function(event) {
     event.preventDefault();
     var url = $(this).attr('href');
-    $('#create-deck').hide(); // need to show this later
+    $('#create-deck').hide();
 
     $.get(url, function(serverResponse, status, request) {
       $('.container').append(serverResponse);
@@ -60,11 +62,7 @@ $(document).ready(function() {
     var url = $(this).attr('action');
     var data = $(this).serialize();
 
-    console.log(url)
-    console.log(data)
-
     $.post(url, data, function(serverResponse, status, request) {
-      console.log(serverResponse);
       $('#deck-title').append('Deck Title: ' + title);
       $('#deck-description').append('Deck Description: ' + description);
       $('#create-card').append('Add a card');
@@ -74,14 +72,49 @@ $(document).ready(function() {
       event.preventDefault();
 
       var url = $(this).attr('href');
-
-
-      $('#create-deck').show();
+      $.get(url, function(serverResponse, status, request) {
+        $('#create-card').hide();
+        $('.container').append(serverResponse);
+      })
     });
 
     $(this).parent('.deck').remove();
 
   });
+
+  $('.card').on('submit', '#create-card',function(event) {
+    event.preventDefault();
+
+    counter++;
+
+    var sideOne = $('input[name=side_one]').val();
+    var sideTwo = $('input[name=side_two]').val();
+
+    console.log(this);
+    var url = $(this).attr('action');
+    console.log(url);
+    var data = $(this).serialize();
+
+    if (counter == 1) {
+      $('tr').append("<th id='answer'>Answer</th>");
+      $('tr').append("<th id='question'>Question</th>");
+    };
+
+    $.post(url, data, function(serverResponse, status, request) {
+      console.log(serverResponse);
+      $('tbody').append('<tr><td>'+sideOne+'</td><td>'+sideTwo+'</td></tr>');
+      $('').val('');
+    });
+
+    // $(this).parent('div').remove(); // Move this around
+
+  });
+
+  $('#finish-deck').on('click', function(event) {
+    event.preventDefault();
+    $('#create-deck').show();
+  });
+
 });
 
 
