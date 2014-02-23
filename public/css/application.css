@@ -7,6 +7,67 @@
   background-color: #FADC96;
 }
 
+.card_container { 
+  width: 200px;
+  height: 260px;
+  position: relative;
+  -webkit-perspective: 800px;
+         -moz-perspective: 800px;
+           -o-perspective: 800px;
+              perspective: 800px;
+}
+
+#card {
+  width: 130%;
+  height: 60%;
+  position: absolute;
+  border: 2px solid grey;
+  -webkit-transition: -webkit-transform 1s;
+         -moz-transition: -moz-transform 1s;
+           -o-transition: -o-transform 1s;
+              transition: transform 1s;
+      -webkit-transform-style: preserve-3d;
+         -moz-transform-style: preserve-3d;
+           -o-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+}
+
+#card.flipped {
+      -webkit-transform: rotateY( 180deg );
+         -moz-transform: rotateY( 180deg );
+           -o-transform: rotateY( 180deg );
+              transform: rotateY( 180deg );
+    }
+
+#card figure {
+  display: block;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  line-height: 100px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 80px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+       -o-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+#card .front {
+  background: purple;
+}
+
+#card .back {
+  background: yellow;
+  -webkit-transform: rotateY( 180deg );
+     -moz-transform: rotateY( 180deg );
+       -o-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+}
+
 .nav-bar {
   position: relative;
   border: 20px black;

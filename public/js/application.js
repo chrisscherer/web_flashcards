@@ -90,8 +90,16 @@ $(document).ready(function() {
 
   $('#guess-sub').on('submit', function(event) {
     event.preventDefault();
-    // Trigger card flip
-    // Trigger feedback
+    var card = document.getElementById('card');
+  
+    document.getElementById('flip').addEventListener( 'click', function(){
+      $(card).addClass('flipped');
+
+      window.setTimeout(turnCard, 2000)
+      function turnCard() {
+        $(card).removeClass('flipped')
+      }
+  }, false);
   });
 });
 

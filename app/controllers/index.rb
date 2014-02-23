@@ -73,6 +73,7 @@ end
 post '/decks/:id' do
   if params[:guess] == params[:current_card]
     session[:last_answer] = "You're awesome"
+    p params[:current_card]
   else
     session[:last_answer] = ["You truly suck", "You really suck", "How can someone be that awful", "Really?", "Wow. No. Sucker", "Just quit now.", "Uninstall life.", "Please don't breed.", "RM-F life", "You need to stop", "No.", "Not even close", "Awful.", "Please stop"].sample
   end

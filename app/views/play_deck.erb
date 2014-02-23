@@ -1,10 +1,16 @@
 <div class='container'>
   <h2><%= @current_deck.name %></h2>
-  <p> <%= @card.side_one %> </p>
+  <section class="card_container">
+  <div id="card">
+    <figure class="front"><%= @card.side_one %></figure>
+    <figure class="back"><%= @card.side_two %></figure>
+  </div>
+</section>
   <form id='guess-sub' action="/decks/<%= params[:id] %>" method='post'>
     <input type='hidden' name="current_card" value='<%=@card.side_two %>'>
     <input type='text' name="guess">
-    <input type='submit' value='Guess'>
+    <input type='submit' value='Guess' id='flip'>
   </form>
   <p></p>
+  <a href='/'>Home Page</a>
 </div>

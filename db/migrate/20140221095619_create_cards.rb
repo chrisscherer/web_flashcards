@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration
       t.belongs_to :deck
       t.string :side_one
       t.string :side_two
+      t.integer :correct_count
 
       t.timestamps
     end
