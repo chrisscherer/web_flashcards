@@ -44,6 +44,7 @@ $(document).ready(function() {
       var url = $(this).attr('href');
       $.get(url, function(serverResponse, status, request) {
         $('#create-card').hide();
+        console.log(serverResponse);
         $('.container').append(serverResponse);
       })
     });
